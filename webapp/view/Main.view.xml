@@ -1,0 +1,41 @@
+<mvc:View controllerName="zuinp00012.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="id.iPage" title="{i18n>title}">
+        <ScrollContainer
+            id="id.iScrollContainer"
+            height="100%"
+            width="100%"
+            vertical="true">
+            <FlexBox id="idFlexBox" class="sapUiSmallMargin" direction="Column">
+                <FlexBox id="idhFlexBox" fitContainer="true" visible="{= !${device>/system/phone} }">
+                    <PDFViewer id="id1PDFViewer" class="sapUiSmallMarginEnd" source="{/Source1}" title="{i18n>title1}" height="{/Height}" width="auto">
+                        <layoutData>
+                            <FlexItemData id="id1FlexItemData" growFactor="1"/>
+                        </layoutData>
+                    </PDFViewer>
+                    <PDFViewer id="id2PDFViewer" class="sapUiSmallMarginBegin" source="{/Source2}" title="{i18n>title2}" height="{/Height}" width="auto">
+                        <layoutData>
+                            <FlexItemData id="id2FlexItemData" growFactor="1"/>
+                        </layoutData>
+                    </PDFViewer>
+                </FlexBox>
+                <FlexBox id="idAFlexBox" alignItems="Center" justifyContent="Center" visible="{device>/system/phone}">
+                    <Button id="idPrincpiosDeNegcioResponsvelButton" icon="sap-icon://print" text="{i18n>title1}" press="onPrincpiosDeNegcioResponsvelButtonPress"/>
+                </FlexBox>
+                <FlexBox id="idBFlexBox" alignItems="Center" justifyContent="Center" visible="{device>/system/phone}">
+                    <Button id="idTermosDeAceiteDaTelefnicaButton" icon="sap-icon://print" text="{i18n>title2}" press="onTermosDeAceiteDaTelefnicaButtonPress"/>
+                </FlexBox>
+                <FlexBox id="id1FlexBox">
+                    <CheckBox id="idLiEDeclaroEstarCienteDoTermoDeAceiteDescritoAcimaCheckBox"
+                              text="{i18n>acceptText}"
+                              wrapping="true" />
+                </FlexBox>
+                <FlexBox id="id2FlexBox">
+                    <Button id="idAceitoButton" text="{i18n>accept}" press="onAceitoButtonPress" class="sapUiSmallMarginEnd"/>
+                    <Button id="idNoAceitoButton" text="{i18n>notAccept}" press="onNoAceitoButtonPress" class="sapUiSmallMarginEnd"/>
+                </FlexBox>
+            </FlexBox>
+        </ScrollContainer>
+    </Page>
+</mvc:View>
