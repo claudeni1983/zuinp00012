@@ -29,11 +29,20 @@
                 <FlexBox id="id1FlexBox">
                     <CheckBox id="idLiEDeclaroEstarCienteDoTermoDeAceiteDescritoAcimaCheckBox"
                               text="{i18n>acceptText}"
-                              wrapping="true" />
+                              wrapping="true"
+                              enabled="{/Term/SignEnable}"
+                              visible="{/Term/SignVisible}"
+                              selected="{/Term/Sign}" />
                 </FlexBox>
                 <FlexBox id="id2FlexBox">
-                    <Button id="idAceitoButton" text="{i18n>accept}" press="onAceitoButtonPress" class="sapUiSmallMarginEnd"/>
-                    <Button id="idNoAceitoButton" text="{i18n>notAccept}" press="onNoAceitoButtonPress" class="sapUiSmallMarginEnd"/>
+                    <Button id="idAceitoButton" text="{i18n>accept}" press="onAceitoButtonPress" class="sapUiSmallMarginEnd"
+                    visible="{/Term/AcceptVisible}"
+                    enabled="{/Term/AcceptEnable}"
+                    type="{/Term/AcceptType}"/>
+                    <Button id="idNoAceitoButton" text="{i18n>notAccept}" press="onNoAceitoButtonPress" class="sapUiSmallMarginEnd"
+                    visible="{/Term/NotAcceptVisible}"
+                    enabled="{/Term/NotAcceptEnable}"
+                    type="{/Term/NotAcceptType}"/>
                 </FlexBox>
             </FlexBox>
         </ScrollContainer>
